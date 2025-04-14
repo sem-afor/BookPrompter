@@ -1,3 +1,4 @@
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
 using SharedTypes;
 
@@ -24,9 +25,24 @@ namespace BookSuggestionAPI.Controllers
         [HttpGet("suggest/{query}")]
         public IActionResult GetBookSuggestion(string query)
         {
-            _bookSuggestion.TryGetValue(query, out BookSuggestion? suggestion);
+            var random = new Random();
+            int issue = random.Next(1, 10);
 
+            if (issue < 2)
+            {
+                Console.WriteLine("Experiencing Time Out Issue");
+                System.Threading.Thread.Sleep(3000);
+            }
+            else if (issue < 9)
+            {
+                Console.WriteLine("Experiencing Internal Server Issue");
+                return StatusCode(500, new { error = "Internal Server Error" });
+            }
+
+            _bookSuggestion.TryGetValue(HttpUtility.UrlDecode(query), out BookSuggestion? suggestion);
+            Console.WriteLine("Query successful");
             return Ok(suggestion);
         }
+
     }
 }

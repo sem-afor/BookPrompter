@@ -1,4 +1,5 @@
-﻿using BookPrompter.BusinessLayer;
+﻿using System.Web;
+using BookPrompter.BusinessLayer;
 using SharedTypes;
 
 namespace BookPrompter.Components.Pages
@@ -9,6 +10,7 @@ namespace BookPrompter.Components.Pages
 
         public string? CurrentPrompt;
         public BookSuggestion? BookSuggestion;
+        public string? DebugException;
 
         private List<string> _prompts = 
         [
@@ -34,15 +36,20 @@ namespace BookPrompter.Components.Pages
             var random = new Random();
             int index = random.Next(_prompts.Count);
             CurrentPrompt = _prompts[index];
+            BookSuggestion = null;
+            DebugException = null;
+            StateHasChanged();
 
             try
             {
-                BookSuggestion = await _businessLogic.GetBookSuggestion(CurrentPrompt);
+                BookSuggestion = await _businessLogic.GetBookSuggestion(HttpUtility.UrlEncode(CurrentPrompt));
                 StateHasChanged();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine("Exception Occured. Book Suggestion could not be loaded!");
+                DebugException = ex.Message;
+                StateHasChanged();
             }
         }
     }

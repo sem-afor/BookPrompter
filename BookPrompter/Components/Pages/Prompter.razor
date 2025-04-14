@@ -32,6 +32,12 @@
                 <strong>Suggested Book:</strong>
                 <span class="text-secondary">@BookSuggestion?.ToString()</span>
             </div>
+                @if (DebugException != null)
+                {
+                    <div>
+                        <span style="color: red;" >@DebugException</span>
+                    </div>
+                }
         </div>
     </div>
 
