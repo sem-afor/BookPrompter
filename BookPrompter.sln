@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookPrompter", "BookPrompter\BookPrompter.csproj", "{ED07CCE4-D885-47EC-9AE1-E765C027623A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookSuggestionAPI", "BookSuggestionAPI\BookSuggestionAPI.csproj", "{934301BD-9ACA-439F-A155-35E92212DC21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedTypes", "SharedTypes\SharedTypes.csproj", "{45915A31-9C0F-4BB3-B76E-046BD6D25E09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{934301BD-9ACA-439F-A155-35E92212DC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{934301BD-9ACA-439F-A155-35E92212DC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{934301BD-9ACA-439F-A155-35E92212DC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45915A31-9C0F-4BB3-B76E-046BD6D25E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45915A31-9C0F-4BB3-B76E-046BD6D25E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45915A31-9C0F-4BB3-B76E-046BD6D25E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45915A31-9C0F-4BB3-B76E-046BD6D25E09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

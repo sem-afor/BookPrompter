@@ -1,0 +1,17 @@
+﻿@page "/prompt"
+@rendermode InteractiveServer
+
+<PageTitle>Book Prompt</PageTitle>
+<h1>Book Prompter</h1>
+
+<button class="btn btn-primary" @onclick="GeneratePrompt">Generate a prompt</button>
+
+<div>
+    <span>Current Prompt:</span>
+    <span>@CurrentPrompt</span>
+</div>
+
+<div>
+    <span>Book Suggestion:</span>
+    <span>@BookSuggestion?.ToString()</span>
+</div>

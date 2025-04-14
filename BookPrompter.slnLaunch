@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Launch Project",
+    "Projects": [
+      {
+        "Path": "BookPrompter\\BookPrompter.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BookSuggestionAPI\\BookSuggestionAPI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
