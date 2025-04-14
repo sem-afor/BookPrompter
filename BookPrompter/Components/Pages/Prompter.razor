@@ -2,16 +2,37 @@
 @rendermode InteractiveServer
 
 <PageTitle>Book Prompt</PageTitle>
-<h1>Book Prompter</h1>
 
-<button class="btn btn-primary" @onclick="GeneratePrompt">Generate a prompt</button>
+<div class="container mt-5">
 
-<div>
-    <span>Current Prompt:</span>
-    <span>@CurrentPrompt</span>
-</div>
+    <div class="text-center mb-4">
+        <h1 class="display-4">Book Prompter</h1>
+        <p class="text-muted">Get inspired with random book prompts and suggestions!</p>
+    </div>
 
-<div>
-    <span>Book Suggestion:</span>
-    <span>@BookSuggestion?.ToString()</span>
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header text-white bg-primary">
+            <h5>Generate a Prompt</h5>
+        </div>
+        <div class="card-body">
+            <button class="btn btn-primary btn-lg mb-3" @onclick="GeneratePrompt">Generate a prompt</button>
+            <div>
+                <strong>Current Prompt:</strong>
+                <span class="text-secondary">@CurrentPrompt</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header text-white bg-secondary">
+            <h5>Book Suggestion</h5>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>Suggested Book:</strong>
+                <span class="text-secondary">@BookSuggestion?.ToString()</span>
+            </div>
+        </div>
+    </div>
+
 </div>
